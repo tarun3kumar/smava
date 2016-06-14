@@ -2,7 +2,9 @@ package de.smava.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
@@ -47,8 +49,9 @@ public class LandingPage {
     }
 
     public ResultPage clickContinue() {
-        webDriver.findElement(By.cssSelector("a[id ^= 'forwardButton']"))
-            .click();
+        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("a[id ^= 'forwardButton']"))).click();
 
         return new ResultPage(webDriver);
     }
