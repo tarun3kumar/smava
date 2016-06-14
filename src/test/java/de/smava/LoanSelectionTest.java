@@ -5,9 +5,10 @@ import de.smava.core.SelTestCase;
 import de.smava.pageobjects.LandingPage;
 import de.smava.pageobjects.ResultPage;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 
@@ -24,7 +25,11 @@ public class LoanSelectionTest extends SelTestCase {
             .selectCreditAmount(loanAmount).selectDuration(duration)
             .selectPurpose(purpose).clickContinue();
 
-        assertThat("Credit amount is wrong on landing page",
+        assertThat("Credit amount is wrong on result page",
             resultPage.getCreditAmount(), is(equalTo(loanAmount)));
+        assertThat("Duration is wrong on result page", resultPage.getDuration(),
+            is(equalTo(duration)));
+        assertThat("Purpose is wrong on result page", resultPage.getPurpose(),
+            is(equalTo(purpose)));
     }
 }
