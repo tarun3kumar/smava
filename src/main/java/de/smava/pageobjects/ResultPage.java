@@ -34,8 +34,8 @@ public class ResultPage {
     }
 
     public String getPurpose() {
-        return webDriver.findElement(By.cssSelector(".amount-column+li>.value"))
-            .getText();
+        return webDriver.findElement(By.cssSelector(
+                    ".amount-column+li+li>.value")).getText();
     }
 
 
