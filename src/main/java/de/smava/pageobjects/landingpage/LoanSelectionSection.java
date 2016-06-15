@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 
 /**
- * Page object for the services offered by landing page
+ * Encapsulates services offered loan selection section 
  *
  * Created by tarun on 6/14/16.
  */
@@ -23,7 +23,7 @@ public class LoanSelectionSection extends Page {
         if (
             !webDriver.getTitle().equals(
                     "SMAVA - Das Online-Vergleichsportal für Kredite | SMAVA")) {
-            throw new IllegalStateException("This is no Smava landing page");
+            throw new IllegalStateException("This is not Smava landing page");
         }
     }
 
