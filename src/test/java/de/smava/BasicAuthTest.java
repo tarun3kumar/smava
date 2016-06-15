@@ -1,7 +1,6 @@
 package de.smava;
 
 import de.smava.core.SelTestCase;
-
 import org.junit.Test;
 
 
