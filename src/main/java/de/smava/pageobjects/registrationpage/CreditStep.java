@@ -1,5 +1,6 @@
-package de.smava.pageobjects;
+package de.smava.pageobjects.registrationpage;
 
+import de.smava.pageobjects.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

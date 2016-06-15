@@ -1,8 +1,9 @@
-package de.smava.pageobjects;
+package de.smava.pageobjects.registrationpage;
 
 import de.smava.dataobjects.Gender;
 import de.smava.dataobjects.User;
 
+import de.smava.pageobjects.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

@@ -2,8 +2,8 @@ package de.smava;
 
 import de.smava.core.SelTestCase;
 
-import de.smava.pageobjects.CreditStep;
-import de.smava.pageobjects.LandingPage;
+import de.smava.pageobjects.registrationpage.CreditStep;
+import de.smava.pageobjects.landingpage.LoanSelectionSection;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -22,7 +22,7 @@ public class LoanSelectionTest extends SelTestCase {
 
         getWebDriver().get("http://www.smava.de/");
 
-        CreditStep resultPage = new LandingPage(getWebDriver())
+        CreditStep resultPage = new LoanSelectionSection(getWebDriver())
             .selectCreditAmount(loanAmount).selectDuration(duration)
             .selectPurpose(purpose).clickContinue();
 

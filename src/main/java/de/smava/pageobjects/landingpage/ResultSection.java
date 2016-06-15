@@ -1,5 +1,7 @@
-package de.smava.pageobjects;
+package de.smava.pageobjects.landingpage;
 
+import de.smava.pageobjects.registrationpage.CreditStep;
+import de.smava.pageobjects.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

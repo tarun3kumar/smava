@@ -1,5 +1,7 @@
-package de.smava.pageobjects;
+package de.smava.pageobjects.landingpage;
 
+import de.smava.pageobjects.registrationpage.CreditStep;
+import de.smava.pageobjects.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -10,11 +12,11 @@ import org.openqa.selenium.support.ui.Select;
  *
  * Created by tarun on 6/14/16.
  */
-public class LandingPage extends Page {
+public class LoanSelectionSection extends Page {
 
     private WebDriver webDriver;
 
-    public LandingPage(WebDriver webDriver) {
+    public LoanSelectionSection(WebDriver webDriver) {
         super(webDriver);
         this.webDriver = webDriver;
 
@@ -25,7 +27,7 @@ public class LandingPage extends Page {
         }
     }
 
-    public LandingPage selectCreditAmount(String creditAmount) {
+    public LoanSelectionSection selectCreditAmount(String creditAmount) {
 
         new Select(getElement(By.id("lsAmount"))).selectByVisibleText(
             creditAmount);
@@ -33,14 +35,14 @@ public class LandingPage extends Page {
         return this;
     }
 
-    public LandingPage selectDuration(String duration) {
+    public LoanSelectionSection selectDuration(String duration) {
         new Select(getElement(By.id("lsDuration"))).selectByVisibleText(
             duration);
 
         return this;
     }
 
-    public LandingPage selectPurpose(String purpose) {
+    public LoanSelectionSection selectPurpose(String purpose) {
         new Select(getElement(By.id("lsCategory"))).selectByVisibleText(
             purpose);
 
