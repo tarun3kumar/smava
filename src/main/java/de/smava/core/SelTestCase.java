@@ -20,11 +20,13 @@ public class SelTestCase {
         return webDriver;
     }
 
-    @Before public void setupDriver() {
+    @Before 
+    public void setupDriver() {
         webDriver = new FirefoxDriver();
     }
 
-    @After public void stopDriver() {
+    @After 
+    public void stopDriver() {
         webDriver.quit();
     }
 

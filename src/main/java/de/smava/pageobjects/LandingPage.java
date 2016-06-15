@@ -2,9 +2,7 @@ package de.smava.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
@@ -12,11 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * Created by tarun on 6/14/16.
  */
-public class LandingPage {
+public class LandingPage extends Page {
 
     private WebDriver webDriver;
 
     public LandingPage(WebDriver webDriver) {
+        super(webDriver);
         this.webDriver = webDriver;
 
         if (
@@ -28,32 +27,31 @@ public class LandingPage {
 
     public LandingPage selectCreditAmount(String creditAmount) {
 
-        new Select(webDriver.findElement(By.id("lsAmount")))
-            .selectByVisibleText(creditAmount);
+        new Select(getElement(By.id("lsAmount"))).selectByVisibleText(
+            creditAmount);
 
         return this;
     }
 
     public LandingPage selectDuration(String duration) {
-        new Select(webDriver.findElement(By.id("lsDuration")))
-            .selectByVisibleText(duration);
+        new Select(getElement(By.id("lsDuration"))).selectByVisibleText(
+            duration);
 
         return this;
     }
 
     public LandingPage selectPurpose(String purpose) {
-        new Select(webDriver.findElement(By.id("lsCategory")))
-            .selectByVisibleText(purpose);
+        new Select(getElement(By.id("lsCategory"))).selectByVisibleText(
+            purpose);
 
         return this;
     }
 
-    public ResultPage clickContinue() {
-        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector("a[id ^= 'forwardButton']"))).click();
+    public CreditStep clickContinue() {
+        waitForElementVisibility(By.cssSelector("a[id ^= 'forwardButton']"))
+            .click();
 
-        return new ResultPage(webDriver);
+        return new CreditStep(webDriver);
     }
 
 }
