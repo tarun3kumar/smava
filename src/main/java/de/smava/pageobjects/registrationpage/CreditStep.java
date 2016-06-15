@@ -40,9 +40,6 @@ public class CreditStep extends Page {
 
     public PersonStep continueToPersonStep() {
         getElement(By.cssSelector("a[href='#ContactInfo']")).click();
-
         return new PersonStep(webDriver);
     }
-
-
 }
