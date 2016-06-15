@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 /**
  * Represents services offered by Person step
- * <p/>
+ *
  * Created by tarun on 6/15/16.
  */
 public class PersonStep extends Page {
@@ -20,8 +20,7 @@ public class PersonStep extends Page {
         super(webDriver);
         this.webDriver = webDriver;
 
-        if (
-                !webDriver.getTitle().equalsIgnoreCase(
+        if (!webDriver.getTitle().equalsIgnoreCase(
                         "Kredit beantragen | Kreditantrag in 4 Schritten | SMAVA")) {
             throw new IllegalStateException("This is not Person step");
         }

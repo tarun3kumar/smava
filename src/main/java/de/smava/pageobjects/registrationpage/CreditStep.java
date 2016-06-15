@@ -18,8 +18,7 @@ public class CreditStep extends Page {
         super(webDriver);
         this.webDriver = webDriver;
 
-        if (
-            !webDriver.getTitle().equals(
+        if (!webDriver.getTitle().equals(
                     "Kredit beantragen | Kreditantrag in 4 Schritten | SMAVA")) {
             throw new IllegalStateException("This is not Result page");
         }

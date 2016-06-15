@@ -20,8 +20,7 @@ public class LoanSelectionSection extends Page {
         super(webDriver);
         this.webDriver = webDriver;
 
-        if (
-            !webDriver.getTitle().equals(
+        if (!webDriver.getTitle().equals(
                     "SMAVA - Das Online-Vergleichsportal für Kredite | SMAVA")) {
             throw new IllegalStateException("This is not Smava landing page");
         }
